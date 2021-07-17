@@ -1,12 +1,14 @@
-const express = require('express');
-const authMiddleware = require('../middlewares/auth');
+const UserModel = require('../models/user');
+const ObjectId = require('mongoose').Types.ObjectId;
 
-const router = express.Router();
+const teste = async (req, res) => {
+	const _id = req.userId;
 
-router.use(authMiddleware);
+	const user = await UserModel.findOne({ _id })
 
-router.get('/', (req, res) => {
-	res.send({ ok : true, user : req.userId });
-});
+	res.send({ ok : true, user });
+};
 
-module.exports = app => app.use('/projects', router);
+module.exports = {
+	teste
+}
