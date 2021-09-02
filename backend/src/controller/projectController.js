@@ -1,14 +1,58 @@
 const UserModel = require('../models/user');
+const ResidenciaModel = require('../models/residencia');
+const AtendimentoModel = require('../models/atendimento');
+
 const ObjectId = require('mongoose').Types.ObjectId;
 
-const teste = async (req, res) => {
+const teste = async (req, res) => { //teste autenticação
 	const _id = req.userId;
 
 	const user = await UserModel.findOne({ _id })
 
 	res.send({ ok : true, user });
-};
+}
+
+const createResidencia = async (req, res) => {
+    const { cpf, nome, idUser, idBairro, cep, endereco, numero, complemento} = req.body;
+	const ativo = true;
+
+    if (await ResidenciaModel.findOne({ cpf }).select('+ativo') )
+        return res.status(400).send({ error : 'User already exists'});
+
+		ResidenciaModel.create({ cpf, nome, idUser, idBairro, cep, endereco, numero, complemento });
+
+    return res.status(201).json();
+}
+
+const getResidencia = async (req, res) => {
+    const { cpf } = req.query;
+	const ativo = true;
+         
+    const residencia = await ResidenciaModel.findOne( { cpf } ).select('+ativo');
+
+    return res.json(residencia);
+}
+
+const createAtendimento = async (req, res) => {
+    const {idUser, idResidencia, cpf, nivel, idDoenca, descricao, retornoEstipulado} = req.body;
+
+	AtendimentoModel.create({idUser, idResidencia, cpf, nivel, idDoenca, descricao, retornoEstipulado});
+
+    return res.status(201).json();
+}
+
+const getAtendimento = async (req, res) => {
+    const { cpf } = req.query;
+
+    const atendimento = await AtendimentoModel.find( { cpf } );
+
+    return res.json(atendimento);
+}
 
 module.exports = {
-	teste
+	teste,
+	createResidencia,
+	getResidencia,
+	createAtendimento,
+	getAtendimento
 }
