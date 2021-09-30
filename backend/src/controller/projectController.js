@@ -14,18 +14,18 @@ const teste = async (req, res) => { //teste autenticação
 
 const createResidencia = async (req, res) => {
     const { cpf, nome, idUser, idBairro, cep, endereco, numero, complemento} = req.body;
-	const ativo = true;
+	const fl_ativo = true;
 
-    if (await ResidenciaModel.findOne({ cpf }).select('+ativo') )
+    if (await ResidenciaModel.findOne({ cpf }).select('+fl_ativo') )
         return res.status(400).send({ error : 'User already exists'});
 
-		ResidenciaModel.create({ cpf, nome, idUser, idBairro, cep, endereco, numero, complemento });
+	ResidenciaModel.create({ cpf, nome, fl_ativo, idUser, idBairro, cep, endereco, numero, complemento });
 
     return res.status(201).json();
 }
 
 const getResidencia = async (req, res) => {
-    const { cpf } = req.query;
+    const { cpf } = req.params;
 	const ativo = true;
          
     const residencia = await ResidenciaModel.findOne( { cpf } ).select('+ativo');
@@ -42,7 +42,7 @@ const createAtendimento = async (req, res) => {
 }
 
 const getAtendimento = async (req, res) => {
-    const { cpf } = req.query;
+    const { cpf } = req.params;
 
     const atendimento = await AtendimentoModel.find( { cpf } );
 

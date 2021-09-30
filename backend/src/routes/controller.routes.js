@@ -10,9 +10,10 @@ router.use(authMiddleware);
 const projectController = require('../controller/projectController');
 
 router.get('/teste', projectController.teste);
+
 router.post('/createResidencia', projectController.createResidencia);
-router.post('/getResidencia', projectController.getResidencia);
+router.get('/getResidencia/:cpf', projectController.getResidencia);
 router.post('/createAtendimento', projectController.createAtendimento);
-router.post('/getAtendimento', projectController.getAtendimento);
+router.get('/getAtendimento/:cpf', projectController.getAtendimento);
 
 module.exports = router;

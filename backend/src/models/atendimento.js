@@ -1,13 +1,35 @@
 const mongoose = require('mongoose');
 
 const AtendimentosSchema = new mongoose.Schema({
-    idUser: mongoose.Types.ObjectId,
-    idResidencia: mongoose.Types.ObjectId,
-    cpf: Number,
-    nivel: String,
-    idDoenca: String,
-    descricao: String,
-    retornoEstipulado: Date,
+    idUser: {
+        type: mongoose.Types.ObjectId,
+		require: true,
+	},
+    idResidencia: {
+        type: mongoose.Types.ObjectId,
+		require: true,
+	},
+    cpf: {
+        type: Number,
+        require: true
+    },
+    nivel: {
+		type: String,
+		require: true,
+	},
+    idDoenca: {
+        type: mongoose.Types.ObjectId,
+	},
+    descricao: {
+		type: String,
+		require: true,
+	},
+    retornoEstipulado: {
+		type: Date,
+		default: Date.now
+	}
 }, { timestamps: { createdAt: 'createdAt' } });
 
-module.exports = mongoose.model('atendimentos', AtendimentosSchema);
+const Atendimento = mongoose.model('Atendimentos', AtendimentosSchema);
+
+module.exports = Atendimento;

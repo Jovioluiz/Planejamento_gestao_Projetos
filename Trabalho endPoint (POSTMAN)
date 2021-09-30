@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "d00dd1ed-2820-438d-83c2-6412a0496f84",
+		"name": "Trabalho Git",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Felipe da Silva\",\r\n    \"email\" : \"felipe@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"felipe.ifsc@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/:userId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/controller/teste",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWY4ZmM5YWQ5NjgxMzYxOGRjYWYwZSIsImlhdCI6MTYyNjQ4MTc5NiwiZXhwIjoxNjI2NTY4MTk2fQ.5cxHeuhi6CYp5o6SckzTHSbJerDW3A1Cr89k211jyIA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/controller/teste",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"controller",
+						"teste"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/controller/createAtendimento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTRmNDgwMTBlM2VhMmE3ODIwNzhkMiIsImlhdCI6MTYzMjk1NzU5OSwiZXhwIjoxNjMzMDQzOTk5fQ.3CTZynTRiKeu44LNdi6MQvU-1p9fnF6Q3zrsYfI49r4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUser\": \"6154f48010e3ea2a782078d2\",\r\n    \"idResidencia\": \"615500ebb10b2c12107fd570\",\r\n    \"cpf\": \"091091091\",\r\n    \"nivel\": \"A\",\r\n    \"idDoenca\": \"6154f48010e3ea2a782078d2\",\r\n    \"descricao\": \"desc\",\r\n    \"retornoEstipulado\": \"09/09/2021\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/controller/createAtendimento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"controller",
+						"createAtendimento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/controller/createResidencia",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTRmNDgwMTBlM2VhMmE3ODIwNzhkMiIsImlhdCI6MTYzMjk1NzU5OSwiZXhwIjoxNjMzMDQzOTk5fQ.3CTZynTRiKeu44LNdi6MQvU-1p9fnF6Q3zrsYfI49r4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf\": \"0910919\",\r\n    \"nome\": \"Nome1\",\r\n    \"fl_ativo\": true,\r\n    \"idUser\": \"6154f48010e3ea2a782078d2\",\r\n    \"idBairro\": \"6154f48010e3ea2a782078d2\",\r\n    \"cep\": \"89812465\",\r\n    \"endereco\": \"Rua Bentevi\",\r\n    \"numero\": \"88\",\r\n    \"complemento\": \"complemento1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/controller/createResidencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"controller",
+						"createResidencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/controller/getResidencia/:cpf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTRmNDgwMTBlM2VhMmE3ODIwNzhkMiIsImlhdCI6MTYzMjk1NzU5OSwiZXhwIjoxNjMzMDQzOTk5fQ.3CTZynTRiKeu44LNdi6MQvU-1p9fnF6Q3zrsYfI49r4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/controller/getResidencia/0910919",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"controller",
+						"getResidencia",
+						"0910919"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "091",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/controller/getAtendimento/:cpf",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTRmNDgwMTBlM2VhMmE3ODIwNzhkMiIsImlhdCI6MTYzMjk1NzU5OSwiZXhwIjoxNjMzMDQzOTk5fQ.3CTZynTRiKeu44LNdi6MQvU-1p9fnF6Q3zrsYfI49r4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/controller/getAtendimento/91091091",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"controller",
+						"getAtendimento",
+						"91091091"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

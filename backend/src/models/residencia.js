@@ -1,17 +1,44 @@
 const mongoose = require('mongoose');
 
 const ResidenciaSchema = new mongoose.Schema({
-    cpf: Number,
-    nome: String,
-    fl_ativo: Boolean,
-    idUser: mongoose.Types.ObjectId,
-    local: [{
-        idBairro: Number,
-        cep: String,
-        endereco: String,
-        numero: String,
-        complemento: String,
-    }]
+
+    cpf:{
+        type: Number,
+        require: true
+    },
+    nome: {
+		type: String,
+		require: true,
+	},
+    fl_ativo: {
+		type: Boolean,
+		require: true
+	},
+    idUser: {
+        type: mongoose.Types.ObjectId,
+		require: true,
+    },
+    idBairro: {
+        type: mongoose.Types.ObjectId,
+    },
+    cep: {
+        type: Number,
+        require: true
+    },
+    endereco: {
+        type: String,
+        require: true,
+    },
+    numero: {
+        type: String,
+        require: true,
+    },
+    complemento: {
+        type: String,
+        require: true,
+    }
 }, { timestamps: { createdAt: 'createdAt' } });
 
-module.exports = mongoose.model('residencia', ResidenciaSchema);
+const Residencia = mongoose.model('Residencias', ResidenciaSchema);
+
+module.exports = Residencia;
