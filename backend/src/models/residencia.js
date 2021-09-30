@@ -35,6 +35,12 @@ const ResidenciaSchema = new mongoose.Schema({
     },
     complemento: {
         type: String,
+    },
+    latitude: {
+        type: Number,
+    },
+    longitude: {
+        type: Number,
     }
 }, { timestamps: { createdAt: 'createdAt' } });
 

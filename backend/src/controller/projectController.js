@@ -13,13 +13,13 @@ const teste = async (req, res) => { //teste autenticação
 }
 
 const createResidencia = async (req, res) => {
-    const { cpf, nome, idUser, idBairro, cep, endereco, numero, complemento} = req.body;
+    const { cpf, nome, idUser, idBairro, cep, endereco, numero, complemento, latitude, longitude} = req.body;
 	const fl_ativo = true;
 
     if (await ResidenciaModel.findOne({ cpf, fl_ativo }) )
         return res.status(400).send({ error : 'User already exists'});
 
-	ResidenciaModel.create({ cpf, nome, fl_ativo, idUser, idBairro, cep, endereco, numero, complemento });
+	ResidenciaModel.create({ cpf, nome, fl_ativo, idUser, idBairro, cep, endereco, numero, complemento, latitude, longitude });
 
     return res.status(201).json();
 }

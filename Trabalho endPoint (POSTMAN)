@@ -174,7 +174,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cpf\": \"0910919\",\r\n    \"nome\": \"Nome1\",\r\n    \"idUser\": \"6154f48010e3ea2a782078d2\",\r\n    \"idBairro\": \"6154f48010e3ea2a782078d2\",\r\n    \"cep\": \"89812465\",\r\n    \"endereco\": \"Rua Bentevi\",\r\n    \"numero\": \"88\",\r\n    \"complemento\": \"complemento1\"\r\n}",
+					"raw": "{\r\n    \"cpf\": \"0910919\",\r\n    \"nome\": \"Nome1\",\r\n    \"idUser\": \"6154f48010e3ea2a782078d2\",\r\n    \"idBairro\": \"6154f48010e3ea2a782078d2\",\r\n    \"cep\": \"89812465\",\r\n    \"endereco\": \"Rua Bentevi\",\r\n    \"numero\": \"88\",\r\n    \"complemento\": \"complemento1\",\r\n    \"latitude\": \"123\",\r\n    \"longitude\": \"123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
