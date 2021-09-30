@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\" : \"felipe.ifsc@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+					"raw": "{\r\n    \"email\" : \"felipe@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -139,7 +139,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"idUser\": \"6154f48010e3ea2a782078d2\",\r\n    \"idResidencia\": \"615500ebb10b2c12107fd570\",\r\n    \"cpf\": \"091091091\",\r\n    \"nivel\": \"A\",\r\n    \"idDoenca\": \"6154f48010e3ea2a782078d2\",\r\n    \"descricao\": \"desc\",\r\n    \"retornoEstipulado\": \"09/09/2021\"\r\n}",
+					"raw": "{\r\n    \"idUser\": \"6154f48010e3ea2a782078d2\",\r\n    \"idResidencia\": \"615500ebb10b2c12107fd570\",\r\n    \"cpf\": \"091091091\",\r\n    \"nivel\": \"A\",\r\n    \"idDoenca\": \"6154f48010e3ea2a782078d2\",\r\n    \"descricao\": \"desc\",\r\n    \"retornoEstipulado\": \"09/10/2021\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -174,7 +174,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cpf\": \"0910919\",\r\n    \"nome\": \"Nome1\",\r\n    \"fl_ativo\": true,\r\n    \"idUser\": \"6154f48010e3ea2a782078d2\",\r\n    \"idBairro\": \"6154f48010e3ea2a782078d2\",\r\n    \"cep\": \"89812465\",\r\n    \"endereco\": \"Rua Bentevi\",\r\n    \"numero\": \"88\",\r\n    \"complemento\": \"complemento1\"\r\n}",
+					"raw": "{\r\n    \"cpf\": \"0910919\",\r\n    \"nome\": \"Nome1\",\r\n    \"idUser\": \"6154f48010e3ea2a782078d2\",\r\n    \"idBairro\": \"6154f48010e3ea2a782078d2\",\r\n    \"cep\": \"89812465\",\r\n    \"endereco\": \"Rua Bentevi\",\r\n    \"numero\": \"88\",\r\n    \"complemento\": \"complemento1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
