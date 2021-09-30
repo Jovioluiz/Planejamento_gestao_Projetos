@@ -16,7 +16,7 @@ const createResidencia = async (req, res) => {
     const { cpf, nome, idUser, idBairro, cep, endereco, numero, complemento} = req.body;
 	const fl_ativo = true;
 
-    if (await ResidenciaModel.findOne({ cpf }).select('+fl_ativo') )
+    if (await ResidenciaModel.findOne({ cpf, fl_ativo }) )
         return res.status(400).send({ error : 'User already exists'});
 
 	ResidenciaModel.create({ cpf, nome, fl_ativo, idUser, idBairro, cep, endereco, numero, complemento });
@@ -26,9 +26,9 @@ const createResidencia = async (req, res) => {
 
 const getResidencia = async (req, res) => {
     const { cpf } = req.params;
-	const ativo = true;
+	const fl_ativo = true;
          
-    const residencia = await ResidenciaModel.findOne( { cpf } ).select('+ativo');
+    const residencia = await ResidenciaModel.findOne( { cpf, fl_ativo } );
 
     return res.json(residencia);
 }

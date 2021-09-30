@@ -35,7 +35,6 @@ const ResidenciaSchema = new mongoose.Schema({
     },
     complemento: {
         type: String,
-        require: true,
     }
 }, { timestamps: { createdAt: 'createdAt' } });
 
