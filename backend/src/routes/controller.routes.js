@@ -16,4 +16,9 @@ router.get('/getResidencia/:cpf', projectController.getResidencia);
 router.post('/createAtendimento', projectController.createAtendimento);
 router.get('/getAtendimento/:cpf', projectController.getAtendimento);
 
+router.get('/getHistoricoByResidencia/:cep', projectController.getHistoricoByResidencia);
+router.get('/getHistoricoByDoenca/:idDoenca', projectController.getHistoricoByDoenca);
+router.get('/getHistoricoByUsuario/:idUser', projectController.getHistoricoByUsuario);
+
+
 module.exports = router;

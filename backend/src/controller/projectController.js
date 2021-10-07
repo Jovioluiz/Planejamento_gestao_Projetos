@@ -49,10 +49,40 @@ const getAtendimento = async (req, res) => {
     return res.json(atendimento);
 }
 
+const getHistoricoByResidencia = async (req, res) => {
+    const { cep } = req.params;
+	const fl_ativo = true;
+         
+    const residencia = await ResidenciaModel.findOne( { cep:+cep, fl_ativo } );
+
+    const atendimento = await AtendimentoModel.find( { idResidencia:residencia._id } );
+
+    return res.json({residencia, atendimento});
+}
+
+const getHistoricoByDoenca = async (req, res) => {
+    const { idDoenca } = req.params;
+
+    const atendimento = await AtendimentoModel.find( { idDoenca } );
+
+    return res.json(atendimento);
+}
+
+const getHistoricoByUsuario = async (req, res) => {
+    const { idUser } = req.params;
+
+    const atendimento = await AtendimentoModel.find( { idUser } );
+
+    return res.json(atendimento);
+}
+
 module.exports = {
 	teste,
 	createResidencia,
 	getResidencia,
 	createAtendimento,
-	getAtendimento
+	getAtendimento,
+    getHistoricoByResidencia,
+    getHistoricoByDoenca,
+    getHistoricoByUsuario
 }
