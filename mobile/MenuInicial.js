@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View, Button } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { DrawerActions, NavigationContainer, useNavigation } from '@react-navigation/native';
-import { RectButton } from 'react-native-gesture-handler';
+import { RectButton, TextInput } from 'react-native-gesture-handler';
+import { useState } from "react";
 
 export function HomeScreen({navigation}){
   return(
@@ -16,9 +17,112 @@ export function HomeScreen({navigation}){
 }
 
 export function CadResidencia({navigation}){
+  const [values, setValues] = useState({
+    cpf: '',
+    nome: '',
+    fl_ativo: true,
+    idUser: '',
+    idBairro: '',
+    cep: '',
+    endereco: '',
+    numero: '',
+    complemento: '',
+    latitude: '',
+    longitude: '',
+  });
   return(
     <View style={styles.container}>
-      <Header title="Cadastro Residência"/>
+      <Header title="Cadastro de Residência"/>
+        <TextInput
+          style={styles.input}
+          id="cpf"
+          class="form-field"
+          type="number" 
+          placeholder="CPF"
+          name="cpf"
+          keyboardType="number-pad"
+          // value={values.cpf}
+        />
+
+        <TextInput
+          style={styles.input}
+          id="nome"
+          class="form-field"
+          type="text"
+          placeholder="Nome"
+          name="nome"
+          // value={values.nome}
+        />
+
+        <TextInput
+          style={styles.input}
+          id="cep"
+          class="form-field"
+          type="text"
+          placeholder="CEP"
+          name="cep"
+          keyboardType="numbers-and-punctuation"
+          // value={values.cep}
+        />
+
+        <TextInput
+          style={styles.input}
+          id="endereco"
+          class="form-field"
+          type="text"
+          placeholder="Endereço"
+          name="endereco"
+          // value={values.cep}
+        />
+
+        <TextInput
+          style={styles.input}
+          id="numero"
+          class="form-field"
+          type="text"
+          placeholder="Número"
+          name="numero"
+          // value={values.cep}
+        />
+
+        <TextInput
+          style={styles.input}
+          id="complemento"
+          class="form-field"
+          type="text"
+          placeholder="Complemento"
+          name="complemento"
+          // value={values.cep}
+        />
+
+        <TextInput
+          style={styles.input}
+          id="latitude"
+          class="form-field"
+          type="number"
+          placeholder="Latitude"
+          name="latitude"
+          keyboardType="number-pad"
+          // value={values.cep}
+        />
+
+        <TextInput
+          style={styles.input}
+          id="longitude"
+          class="form-field"
+          type="number"
+          placeholder="Longitude"
+          name="longitude"
+          keyboardType="number-pad"
+          // value={values.cep}
+        />
+
+        <View style={styles.button}>
+          <Button 
+            title="Gravar"
+          />
+        </View>
+
       <View style={styles.content}>
       </View>
     </View>
@@ -79,7 +183,8 @@ const styles = StyleSheet.create({
   content:{
     flex: 1,
     alignItems: 'center',
-    justifyContent:'center'
+    justifyContent:'center',
+    marginTop: 10
   },
   header : {
     flexDirection: 'row',
@@ -94,16 +199,27 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor:'#1E1E2D',
-    borderRadius: 5,
-    padding: 5,
-    alignItems:'center',
-    justifyContent: 'center',
-    marginTop: 10
+    color:"#841584",
+    marginVertical: 100,
+    marginHorizontal:5,
+    marginTop: 20,
+    marginBottom: 10,
+    borderRadius:5,
+    borderWidth:2,
+    height:40,
+    bottom: 0
   },
 
   buttonText:{
     color:'#FFFFFF'
+  },
+
+  input:{
+        height: 40,
+    margin: 12,
+    borderWidth: 2,
+    padding: 10,
+    borderRadius:5
   }
   
 });
